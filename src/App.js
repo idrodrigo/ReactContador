@@ -1,24 +1,17 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
 
 function App() {
+  let [contador, setcontador] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <button onClick={() => setcontador(--contador)}>disminuir</button>
+      <button onClick={() => setcontador(contador+1)}>aumentar</button>
+      <button onClick={() => setcontador(0)}>restablecer</button>
+      <h1>{contador}</h1>
+
+    </>
   );
 }
 
